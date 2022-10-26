@@ -16,7 +16,7 @@ import javax.persistence.*;
 public class Medlist {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long med_list_id;
+    private Long id;
 
     @Column(columnDefinition = "text")
     private String med_name;

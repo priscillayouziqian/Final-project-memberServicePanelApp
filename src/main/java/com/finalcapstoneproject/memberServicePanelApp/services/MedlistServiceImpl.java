@@ -45,7 +45,7 @@ public class MedlistServiceImpl implements MedlistService {
     @Override
     @Transactional
     public void updateMedlistById(MedlistDto medlistDto){
-        Optional<Medlist> medlistOptional = medlistRepository.findById(medlistDto.getMed_list_id());
+        Optional<Medlist> medlistOptional = medlistRepository.findById(medlistDto.getId());
         medlistOptional.ifPresent(medlist -> {
             medlist.setMed_name(medlistDto.getMed_name());
             medlist.setInstruction(medlistDto.getInstruction());

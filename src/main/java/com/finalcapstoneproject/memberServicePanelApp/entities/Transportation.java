@@ -17,7 +17,7 @@ import java.time.LocalTime;
 public class Transportation {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long transportation_id;
+    private Long id;
 
     @Column(columnDefinition = "text")
     private String transportation_provider;

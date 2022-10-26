@@ -18,8 +18,8 @@ public class MemberDto implements Serializable {
     private Long member_id;
     private String username;
     private String password;
-    private Set<Medlist> medlistSet = new HashSet<>();
-    private Set<Appointment> appointmentSet = new HashSet<>();
+    private Set<MedlistDto> medlistDtoSet = new HashSet<>();
+    private Set<AppointmentDto> appointmentDtoSet = new HashSet<>();
 
     public MemberDto(Member member){
         if(member.getMember_id() != null){

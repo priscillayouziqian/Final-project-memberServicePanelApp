@@ -11,14 +11,14 @@ import java.io.Serializable;
 @AllArgsConstructor
 @NoArgsConstructor
 public class MedlistDto implements Serializable {
-    private Long med_list_id;
+    private Long id;
     private String med_name;
     private String instruction;
     private MemberDto memberDto;
 
     public MedlistDto(Medlist medlist){
-        if(medlist.getMed_list_id() != null){
-            this.med_list_id = medlist.getMed_list_id();
+        if(medlist.getId() != null){
+            this.id = medlist.getId();
         }
         if(medlist.getMed_name() != null){
             this.med_name = medlist.getMed_name();
