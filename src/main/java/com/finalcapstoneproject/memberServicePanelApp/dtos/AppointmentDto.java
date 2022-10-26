@@ -12,7 +12,7 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @NoArgsConstructor
 public class AppointmentDto implements Serializable {
-    private Long  appt_id;
+    private Long appt_id;
     private String provider_name;
     private String provider_address;
     private LocalDateTime appt_date_time;

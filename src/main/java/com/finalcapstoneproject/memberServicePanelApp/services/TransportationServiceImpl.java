@@ -32,6 +32,7 @@ public class TransportationServiceImpl implements TransportationService {
         if(appointmentOptional.isPresent()){
             transportation.setAppointment(appointmentOptional.get());
         }
+//        appointmentOptional.ifPresent(transportation::setAppointment);
         transportationRepository.saveAndFlush(transportation);
     }
     //delete a transportation appt
@@ -46,7 +47,7 @@ public class TransportationServiceImpl implements TransportationService {
     public List<TransportationDto> getAllTransportationById(Long appointmentId){
         Optional<Appointment> transportationOptional = appointmentRepository.findById(appointmentId);
         if(transportationOptional.isPresent()){
-            List<Transportation> transportationList = transportationRepository.findAllByIdEquals(transportationOptional.get());
+            List<Transportation> transportationList = transportationRepository.findAllByAppointmentEquals(transportationOptional.get());
             return transportationList.stream().map(transportation -> new TransportationDto(transportation)).collect(Collectors.toList());
         }
         return Collections.emptyList();

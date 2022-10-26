@@ -41,7 +41,7 @@ public class MemberServiceImpl implements MemberService {
             if(passwordEncoder.matches(memberDto.getPassword(), memberOptional.get().getPassword())){
                 response.add("user login successful");
                 //line 44: add member id to the response list, the front end can use the id if needed.
-                response.add(String.valueOf(memberOptional.get().getMember_id()));
+                response.add(String.valueOf(memberOptional.get().getId()));
             }else{
                 response.add("username or password incorrect");
             }

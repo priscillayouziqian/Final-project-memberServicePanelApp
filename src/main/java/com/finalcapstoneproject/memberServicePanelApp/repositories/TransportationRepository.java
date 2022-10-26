@@ -9,5 +9,5 @@ import java.util.List;
 
 @Repository
 public interface TransportationRepository extends JpaRepository<Transportation, Long> {
-    List<Transportation> findAllByIdEquals(Appointment appointment);
+    List<Transportation> findAllByAppointmentEquals(Appointment appointment);
 }

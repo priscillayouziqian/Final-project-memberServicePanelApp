@@ -57,7 +57,7 @@ public class MedlistServiceImpl implements MedlistService {
     public List<MedlistDto> getAllMedlistById(Long memberId){
         Optional<Member> memberOptional = memberRepository.findById(memberId);
         if(memberOptional.isPresent()){
-            List<Medlist> medlistList = medlistRepository.findAllByIdEquals(memberOptional.get());
+            List<Medlist> medlistList = medlistRepository.findAllByMemberEquals(memberOptional.get());
             return medlistList.stream().map(medlist -> new MedlistDto(medlist)).collect(Collectors.toList());
         }
         return Collections.emptyList();

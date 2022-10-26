@@ -9,5 +9,5 @@ import java.util.List;
 
 @Repository
 public interface MedlistRepository extends JpaRepository<Medlist, Long> {
-    List<Medlist> findAllByIdEquals(Member member);
+    List<Medlist> findAllByMemberEquals(Member member);
 }

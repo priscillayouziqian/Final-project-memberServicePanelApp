@@ -1,7 +1,5 @@
 package com.finalcapstoneproject.memberServicePanelApp.dtos;
 
-import com.finalcapstoneproject.memberServicePanelApp.entities.Appointment;
-import com.finalcapstoneproject.memberServicePanelApp.entities.Medlist;
 import com.finalcapstoneproject.memberServicePanelApp.entities.Member;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -15,15 +13,15 @@ import java.util.Set;
 @AllArgsConstructor
 @NoArgsConstructor
 public class MemberDto implements Serializable {
-    private Long member_id;
+    private Long id;
     private String username;
     private String password;
     private Set<MedlistDto> medlistDtoSet = new HashSet<>();
     private Set<AppointmentDto> appointmentDtoSet = new HashSet<>();
 
     public MemberDto(Member member){
-        if(member.getMember_id() != null){
-            this.member_id = member.getMember_id();
+        if(member.getId() != null){
+            this.id = member.getId();
         }
         if(member.getUsername() != null){
             this.username = member.getUsername();

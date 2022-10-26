@@ -1,6 +1,8 @@
 package com.finalcapstoneproject.memberServicePanelApp.entities;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.finalcapstoneproject.memberServicePanelApp.dtos.AppointmentDto;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -26,14 +28,15 @@ public class Appointment {
     private String provider_address;
 
     @Column(columnDefinition = "text")
+    @JsonFormat(pattern = "yyyy-MM-dd'T'HH:mm:SSSZ", shape = JsonFormat.Shape.STRING)
     private LocalDateTime appt_date_time;
 
     @ManyToOne
     @JsonBackReference
     private Member member;
 
-    @OneToOne(mappedBy = "appointment")
-    @JsonBackReference
+    @OneToOne(mappedBy = "appointment", cascade = CascadeType.ALL, orphanRemoval = true)
+//    @JsonManagedReference
     private Transportation transportation;
 
     public Appointment(AppointmentDto appointmentDto){
