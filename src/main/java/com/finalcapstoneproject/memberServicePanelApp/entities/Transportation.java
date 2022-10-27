@@ -32,7 +32,7 @@ public class Transportation {
     private LocalTime return_pick_up_time;
 
     @OneToOne
-//    @JsonBackReference
+    @JsonBackReference
     private Appointment appointment;
 
     public Transportation(TransportationDto transportationDto){

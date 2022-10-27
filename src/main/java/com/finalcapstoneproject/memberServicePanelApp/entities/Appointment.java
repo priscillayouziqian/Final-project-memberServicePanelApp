@@ -36,7 +36,7 @@ public class Appointment {
     private Member member;
 
     @OneToOne(mappedBy = "appointment", cascade = CascadeType.ALL, orphanRemoval = true)
-//    @JsonManagedReference
+    @JsonManagedReference
     private Transportation transportation;
 
     public Appointment(AppointmentDto appointmentDto){

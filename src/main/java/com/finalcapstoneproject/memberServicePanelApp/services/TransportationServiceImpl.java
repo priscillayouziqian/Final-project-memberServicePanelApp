@@ -43,15 +43,15 @@ public class TransportationServiceImpl implements TransportationService {
         transportationOptional.ifPresent(transportation -> transportationRepository.delete(transportation));
     }
     //get all transportation by appt id
-    @Override
-    public List<TransportationDto> getAllTransportationById(Long appointmentId){
-        Optional<Appointment> transportationOptional = appointmentRepository.findById(appointmentId);
-        if(transportationOptional.isPresent()){
-            List<Transportation> transportationList = transportationRepository.findAllByAppointmentEquals(transportationOptional.get());
-            return transportationList.stream().map(transportation -> new TransportationDto(transportation)).collect(Collectors.toList());
-        }
-        return Collections.emptyList();
-    }
+//    @Override
+//    public List<TransportationDto> getAllTransportationById(Long appointmentId){
+//        Optional<Appointment> transportationOptional = appointmentRepository.findById(appointmentId);
+//        if(transportationOptional.isPresent()){
+//            List<Transportation> transportationList = transportationRepository.findAllByAppointmentEquals(transportationOptional.get());
+//            return transportationList.stream().map(transportation -> new TransportationDto(transportation)).collect(Collectors.toList());
+//        }
+//        return Collections.emptyList();
+//    }
     //get a single transportation appt by the transportation id
     @Override
     public Optional<TransportationDto> getTransportationById(Long appointmentId){
