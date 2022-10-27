@@ -35,8 +35,10 @@ public class Appointment {
     @JsonBackReference
     private Member member;
 
-    @OneToOne(mappedBy = "appointment", cascade = CascadeType.ALL, orphanRemoval = true)
-    @JsonManagedReference
+    @OneToOne(cascade = CascadeType.ALL, orphanRemoval = true)
+//    @JsonManagedReference
+//    @JoinColumn(name = "transportation_id", referencedColumnName = "id")
+    @JsonBackReference
     private Transportation transportation;
 
     public Appointment(AppointmentDto appointmentDto){
