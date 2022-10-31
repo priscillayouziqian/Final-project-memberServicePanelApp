@@ -27,7 +27,7 @@ public class MemberServiceImpl implements MemberService {
         List<String> response = new ArrayList<>();
         Member member = new Member(memberDto);
         memberRepository.saveAndFlush(member);
-        response.add("Member added Successfully");
+        response.add("http://localhost:8080/home.html");
         return response;
     }
 
@@ -39,7 +39,7 @@ public class MemberServiceImpl implements MemberService {
         Optional<Member> memberOptional = memberRepository.findByUsername(memberDto.getUsername());
         if(memberOptional.isPresent()){
             if(passwordEncoder.matches(memberDto.getPassword(), memberOptional.get().getPassword())){
-                response.add("user login successful");
+                response.add("http://localhost:8080/dashboard.html");
                 //line 44: add member id to the response list, the front end can use the id if needed.
                 response.add(String.valueOf(memberOptional.get().getId()));
             }else{

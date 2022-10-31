@@ -1,0 +1,151 @@
+* {
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box;
+}
+
+body, html {
+	height: 100%;
+    width: 100%;
+	font-family: 'Ubuntu', sans-serif;
+}
+
+section{
+    height: 20%;
+    background-color: #57b846;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+section h1{
+    color: white;
+    font-family: 'Ubuntu';
+    font-size: 50px;
+}
+
+/* Two forms */
+.form-structor{
+    height: 80%;
+    display: flex;
+    justify-content: center;
+    background-color: #fff;
+}
+
+.signup, .login{
+    width: 35%;
+    height: 80%;
+    border-radius: 15px;
+    margin: 5%;
+    display: flex;
+    flex-direction: column;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.form-header{
+    height: 20%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #57b846;
+    border-radius: 15px 15px 0 0;
+    padding: 7px 7px;
+    font-size: 27px;
+}
+
+.form-title{
+    font-family: 'Ubuntu', sans-serif;
+    color: white;
+}
+
+
+.form-holder{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+/* .input-holder{
+} */
+
+input{
+    width: 100%;
+    font-family: Ubuntu-Bold;
+    color: #1b3815;
+    background: #ebebeb;
+    border-radius: 20px;
+    border: none transparent;
+    outline: none;
+    padding-left: 5%;
+    font-size: 25px;
+}
+
+input::placeholder {
+    padding-left: 5%;
+}
+
+
+/* Focus Input */
+.focus-input100 {
+    display: block;
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    transform: translateX(-50%);
+    border-radius: 31px;
+    background-color: #ebebeb;
+    pointer-events: none;
+
+    -webkit-transition: all 0.4s;
+    -o-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    transition: all 0.4s;
+  }
+
+  .input:focus + .focus-input100 {
+    width: calc(100% + 20px);
+  }
+
+  /* Button */
+
+  .submit-btn {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+    width: 200px;
+    height: 50px;
+    background-color: #57b846;
+    border-radius: 25px;
+
+    font-family: Ubuntu-Bold;
+    font-size: 25px;
+    color: #fff;
+    line-height: 1.2;
+    text-transform: uppercase;
+
+    -webkit-transition: all 0.4s;
+    -o-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    transition: all 0.4s;
+    border: none transparent;
+    outline: none;
+  }
+
+  .submit-btn:hover {
+    background-color: #1b3815;
+  }
