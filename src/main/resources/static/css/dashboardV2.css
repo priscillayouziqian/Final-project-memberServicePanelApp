@@ -1,0 +1,171 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+    width: 100%;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+/*header section*/
+section{
+    height: 15%;
+    width: 100%;
+    background-color: #57b846;
+    display: flex;
+    justify-content: space-between;
+    padding: 2%;
+}
+
+.header-left{
+    /*border: 1px solid black;*/
+
+
+    display: flex;
+    justify-content: center;
+}
+
+.header-left h1{
+    color: white;
+    font-size: xxx-large;
+}
+.header-right{
+
+    width: 50%;
+
+    display: flex;
+    /* test with username, if space-other is better? */
+    justify-content: space-around;
+}
+/* #showUsername is pending to style */
+#showUsername{
+    font-family: 'Ubuntu', sans-serif;
+    color: white;
+    font-size: x-large;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#logout-btn{
+    align-items: center;
+    appearance: none;
+    background-color: #fff;
+    border-radius: 24px;
+    border-style: none;
+    box-shadow: rgba(0, 0, 0, .2) 0 3px 5px -1px,rgba(0, 0, 0, .14) 0 6px 10px 0,rgba(0, 0, 0, .12) 0 1px 18px 0;
+    box-sizing: border-box;
+    color: #3c4043;
+    cursor: pointer;
+    display: inline-flex;
+    fill: currentcolor;
+    font-family: 'Ubuntu', sans-serif;
+    /*font-size: 14px;*/
+    font-size: large;
+    font-weight: 500;
+    height: 48px;
+    justify-content: center;
+    letter-spacing: .25px;
+    line-height: normal;
+    max-width: 100%;
+    overflow: visible;
+    padding: 2px 24px;
+    position: relative;
+    text-align: center;
+    text-transform: none;
+    transition: box-shadow 280ms cubic-bezier(.4, 0, .2, 1),opacity 15ms linear 30ms,transform 270ms cubic-bezier(0, 0, .2, 1) 0ms;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    width: auto;
+    will-change: transform,opacity;
+    z-index: 0;
+}
+
+/* main part */
+main{
+    width: 100%;
+    height: 85%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-left, .container-right{
+    height: 80%;
+    width: 35%;
+
+    border-radius: 15px;
+    margin: 5%;
+    display: flex;
+    border: 2px solid #57b846;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+    position: relative;
+    text-align: center;
+    color: #57b846;
+}
+
+.centered{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-family: 'Ubuntu', sans-serif;
+    transform: translate(-50%, -50%);
+    font-size: xx-large;
+}
+a{
+    width: 100%;
+}
+img{
+    height: 100%;
+    width: 100%;
+    border-radius: 15px;
+    opacity: 0.5;
+}
+
+/* hover over effect on mouse over imgages */
+img:hover{
+    opacity: 1;
+}
+
+
+/*below is copied button hover effect*/
+#logout-btn:hover {
+    background: #F6F9FE;
+    color: #174ea6;
+}
+
+#logout-btn:active {
+    box-shadow: 0 4px 4px 0 rgb(60 64 67 / 30%), 0 8px 12px 6px rgb(60 64 67 / 15%);
+    outline: none;
+}
+
+#logout-btn:focus {
+    outline: none;
+    border: 2px solid #4285f4;
+}
+
+#logout-btn:not(:disabled) {
+    box-shadow: rgba(60, 64, 67, .3) 0 1px 3px 0, rgba(60, 64, 67, .15) 0 4px 8px 3px;
+}
+
+#logout-btn:not(:disabled):hover {
+    box-shadow: rgba(60, 64, 67, .3) 0 2px 3px 0, rgba(60, 64, 67, .15) 0 6px 10px 4px;
+}
+
+#logout-btn:not(:disabled):focus {
+    box-shadow: rgba(60, 64, 67, .3) 0 1px 3px 0, rgba(60, 64, 67, .15) 0 4px 8px 3px;
+}
+
+#logout-btn:not(:disabled):active {
+    box-shadow: rgba(60, 64, 67, .3) 0 4px 4px 0, rgba(60, 64, 67, .15) 0 8px 12px 6px;
+}
+
+#logout-btn:disabled {
+    box-shadow: rgba(60, 64, 67, .3) 0 1px 3px 0, rgba(60, 64, 67, .15) 0 4px 8px 3px;
+}
