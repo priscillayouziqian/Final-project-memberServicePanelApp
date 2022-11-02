@@ -40,6 +40,8 @@ public class MemberServiceImpl implements MemberService {
         if(memberOptional.isPresent()){
             if(passwordEncoder.matches(memberDto.getPassword(), memberOptional.get().getPassword())){
                 response.add("http://localhost:8080/dashboard.html");
+                response.add(memberDto.getUsername());
+                response.add(memberDto.getPassword());
                 //line 44: add member id to the response list, the front end can use the id if needed.
                 response.add(String.valueOf(memberOptional.get().getId()));
             }else{

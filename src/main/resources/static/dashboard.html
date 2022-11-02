@@ -4,10 +4,42 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/dashboard.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@300&family=Kanit&family=Oleo+Script+Swash+Caps:wght@700&family=Pacifico&family=Permanent+Marker&family=Roboto:ital@1&family=Rubik+Moonrocks&family=Shadows+Into+Light&family=Source+Sans+Pro:ital,wght@1,300&family=Ubuntu&display=swap" rel="stylesheet">
     <title>DashBoard - Member Service Panel</title>
 </head>
 <body>
-    <h1>dash board</h1>
-    
+
+<section>
+    <div class="header-left">
+        <h1>Dash Board</h1>
+    </div>
+
+    <div class="header-right">
+        <div id="showUsername"></div>
+        <button id="logout-btn">log out</button>
+    </div>
+
+</section>
+<!--   Above section is the same top head for every page    -->
+
+<main>
+    <div class="container-left">
+        <a href="medlist.html"><img src="medlist.jpg" alt="medication list"></a>
+        <div class="centered">Medication List</div>
+    </div>
+    <div class="container-right">
+        <a href=""><img src="medicalAppointment.jpeg" alt="medical Appointment"></a>
+        <div class="centered">Medical Appointment</div>
+    </div>
+</main>
+
+
+
+
+<script src="./javaScript/dashboard.js"></script>
+
 </body>
 </html>
