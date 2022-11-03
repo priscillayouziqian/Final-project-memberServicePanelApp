@@ -1,5 +1,6 @@
+console.log("homeV2 connected");
 console.clear();
-console.log("hello");
+
 
 // STEP 1: grab the html elements
 const regsiterBtn = document.querySelector("#register-btn");
@@ -46,20 +47,22 @@ const loginMember = async() =>{
     // console.log(usernameLogin.value);
     // console.log(passwordLogin.value);
 
-   await fetch(`${baseUrl}/login`, {
+    await fetch(`${baseUrl}/login`, {
         method: "POST",
         body: JSON.stringify(body),
         headers: headers
     }).then(res => res.json())
-       .then(data => {
-           console.log(data[1]);
-           let username = data[1];
-           let password = data[2];
-           window.localStorage.setItem('username', username);
-           window.localStorage.setItem('password', password);
-           document.cookie = `memberId=${data[3]}`
-           location.assign("dashboard.html")
-       })
+        .then(data => {
+            console.log(data[1]);
+            let username = data[1];
+            let password = data[2];
+            let memberId = data[3];
+            window.localStorage.setItem('memberId', memberId);
+            window.localStorage.setItem('username', username);
+            window.localStorage.setItem('password', password);
+            document.cookie = `${data[3]}`
+            location.assign("dashboard.html")
+        })
         .catch(err => console.error(err.message))
 
 };

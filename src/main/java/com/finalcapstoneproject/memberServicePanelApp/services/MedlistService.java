@@ -8,7 +8,7 @@ import java.util.Optional;
 
 public interface MedlistService {
     @Transactional
-    void addMedlist(MedlistDto medlistDto, Long userId);
+    List<String> addMedlist(MedlistDto medlistDto, Long userId);
 
     //delete a med list
     @Transactional

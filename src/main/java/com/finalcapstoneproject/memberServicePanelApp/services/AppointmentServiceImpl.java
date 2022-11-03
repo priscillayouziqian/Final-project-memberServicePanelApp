@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
@@ -24,13 +25,19 @@ public class AppointmentServiceImpl implements AppointmentService {
     //adding an appt
     @Override
     @Transactional
-    public void addAppt(AppointmentDto appointmentDto, Long memberId){
+    public List<String> addAppt(AppointmentDto appointmentDto, Long memberId){
+        List<String> response = new ArrayList<>();
         Optional<Member> memberOptional = memberRepository.findById(memberId);
         Appointment appointment = new Appointment(appointmentDto);
         if(memberOptional.isPresent()){
             appointment.setMember(memberOptional.get());
+            response.add(appointmentDto.getAppt_date_time().toString());
+            response.add(appointmentDto.getProvider_name());
+            response.add(appointmentDto.getProvider_address());
+            response.add("appointment successfully added");
         }
         appointmentRepository.saveAndFlush(appointment);
+        return response;
     }
     //delete an appt
     @Override

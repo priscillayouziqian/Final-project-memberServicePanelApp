@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
@@ -26,13 +27,18 @@ public class MedlistServiceImpl implements MedlistService {
 
     @Override
     @Transactional
-    public void addMedlist(MedlistDto medlistDto, Long userId){
+    public List<String> addMedlist(MedlistDto medlistDto, Long userId){
+        List<String> response = new ArrayList<>();
         Optional<Member> memberOptional = memberRepository.findById(userId);
         Medlist medlist = new Medlist(medlistDto);
         if(memberOptional.isPresent()){
             medlist.setMember(memberOptional.get());
+            response.add(medlistDto.getMed_name());
+            response.add(medlistDto.getInstruction());
+            response.add("medlist successfully added");
         }
         medlistRepository.saveAndFlush(medlist);
+        return response;
     }
     //delete a med list
     @Override

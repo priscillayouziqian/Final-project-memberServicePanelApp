@@ -21,13 +21,13 @@ public class AppointmentController {
     }
     //add a new appointment
     @PostMapping("/member/{memberId}")
-    public void addAppointment(@RequestBody AppointmentDto appointmentDto,@PathVariable Long memberId){
-        appointmentService.addAppt(appointmentDto, memberId);
+    public List<String> addAppointment(@RequestBody AppointmentDto appointmentDto,@PathVariable Long memberId){
+        return appointmentService.addAppt(appointmentDto, memberId);
     }
     //delete an appointment
-    @DeleteMapping("/{memberId}")
-    public void deleteAppointmentById(@PathVariable Long memberId){
-        appointmentService.deleteApptById(memberId);
+    @DeleteMapping("/{appointmentId}")
+    public void deleteAppointmentById(@PathVariable Long appointmentId){
+        appointmentService.deleteApptById(appointmentId);
     }
     //update an existing appointment
     @PutMapping

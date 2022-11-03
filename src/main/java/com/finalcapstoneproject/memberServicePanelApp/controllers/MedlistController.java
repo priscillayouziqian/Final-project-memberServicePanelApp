@@ -21,8 +21,8 @@ public class MedlistController {
     }
     //add a new medlist
     @PostMapping("/member/{memberId}")
-    public void addMedlist(@RequestBody MedlistDto medlistDto,@PathVariable Long memberId){
-        medlistService.addMedlist(medlistDto, memberId);
+    public List<String> addMedlist(@RequestBody MedlistDto medlistDto,@PathVariable Long memberId){
+        return medlistService.addMedlist(medlistDto, memberId);
     }
     //delete a medlist
     @DeleteMapping("/{medlistId}")

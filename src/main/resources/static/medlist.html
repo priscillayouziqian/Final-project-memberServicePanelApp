@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="./css/medlist.css">
-    <title>Medlist - Member Service Panel</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <title>Medication List - Member Management Panel</title>
 </head>
 <body>
     <section>
@@ -15,20 +16,26 @@
             <div id="showUsername"></div>
             <button id="logout-btn">log out</button>
         </div>
-
+        <!--   Above section is the same top head for every page    -->
     </section>
 
     <main>
         <div>
-            <button>Add Medlist</button>
+            <div>
+                <input type="text" id="input-med-name" placeholder="medication name" />
+                <input type="text" id="input-instruction" placeholder="instruction" />
+            </div>
+            <button id="addBtn">Add Medicine</button>
         </div>
 
     <!--   Below div will contain med list from logged in member     -->
-        <div>
+        <div id="responseArea">
 
         </div>
     </main>
 
-    <script src="javaScript/medlist.js"></script>
+    <script src="./javaScript/newmedlist.js"></script>
+    <!-- below linking dashboard js, to have username shown & log out function   -->
+    <script src="./javaScript/dashboard.js"></script>
 </body>
 </html>
