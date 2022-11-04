@@ -35,6 +35,8 @@ public class Transportation {
     @JsonBackReference
     private Appointment appointment;
 
+
+
     public Transportation(TransportationDto transportationDto){
         if(transportationDto.getTransportation_provider() != null){
             this.transportation_provider = transportationDto.getTransportation_provider();

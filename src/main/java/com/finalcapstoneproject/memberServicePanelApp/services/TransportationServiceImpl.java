@@ -26,8 +26,8 @@ public class TransportationServiceImpl implements TransportationService {
     //adding a transportation appt
     @Override
     @Transactional
-    public void addTransportation(TransportationDto transportationDto, Long transportationId){
-        Optional<Appointment> appointmentOptional = appointmentRepository.findById(transportationId);
+    public void addTransportation(TransportationDto transportationDto, Long appointmentId){
+        Optional<Appointment> appointmentOptional = appointmentRepository.findById(appointmentId);
         Transportation transportation = new Transportation(transportationDto);
         if(appointmentOptional.isPresent()){
             transportation.setAppointment(appointmentOptional.get());

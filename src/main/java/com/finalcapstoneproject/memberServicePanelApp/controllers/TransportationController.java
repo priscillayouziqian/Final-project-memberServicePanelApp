@@ -30,9 +30,15 @@ public class TransportationController {
         transportationService.deleteTransportationById(transportationId);
     }
     //get a transportation by transportation id
-    @GetMapping("/{transportationId}")
-    public Optional<TransportationDto> getTransportationById(@PathVariable Long transportationId){
-        return transportationService.getTransportationById(transportationId);
-    }
+//    @GetMapping("/{transportationId}")
+//    public Optional<TransportationDto> getTransportationById(@PathVariable Long transportationId){
+//        return transportationService.getTransportationById(transportationId);
+//    }
+//
+//    //get a transportation by appointment id
+//    @GetMapping("/{appointmentId}")
+//    public Optional<TransportationDto> getTransportationById(@PathVariable Long appointmentId){
+//        return transportationService.getTransportationById(appointmentId);
+//    }
 
 }
