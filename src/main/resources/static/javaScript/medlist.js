@@ -66,14 +66,15 @@ const createCards = (array) => {
 
     array.forEach(obj => {
         const div = document.createElement('div');
-        div.classList = "w3-third";
+        div.classList = "card";
 
         div.innerHTML = `
             <p>${obj.med_name}</p>
             <p>${obj.instruction}</p>
+            <br>
             <button id="${obj.id}">Edit</button>
             <button>Save</button>
-            <button id="delete-btn" onclick="deleteMedlistByMedlistId(${obj.id})">X</button>
+            <button id="delete-btn" onclick="deleteMedlistByMedlistId(${obj.id})"> X </button>
             
         `
         responseArea.appendChild(div)

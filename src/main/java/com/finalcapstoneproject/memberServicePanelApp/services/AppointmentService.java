@@ -9,7 +9,7 @@ import java.util.Optional;
 public interface AppointmentService {
     //adding an appt
     @Transactional
-    void addAppt(AppointmentDto appointmentDto, Long memberId);
+    List<String> addAppt(AppointmentDto appointmentDto, Long memberId);
 
     //delete an appt
     @Transactional

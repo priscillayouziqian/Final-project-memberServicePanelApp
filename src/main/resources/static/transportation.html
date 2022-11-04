@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <link rel="stylesheet" href="./css/transportation.css">
+      <title>Schedule Transportation - Member Management Panel</title>
+  </head>
+<body>
+
+  <section>
+    <div class="header-left">
+      <h1>Dash Board</h1>
+    </div>
+
+    <div class="header-right">
+      <div id="showUsername"></div>
+      <button id="logout-btn">log out</button>
+    </div>
+    <!--   Above section is the same top head for every page    -->
+  </section>
+
+  <main>
+    <div>
+      <div>
+        <input type="text" id="input-transportation-provider" placeholder="transportation provider name" />
+        <input type="datetime-local" id="input-pickup-time" value="2022-11-02T10:30" placeholder="pick up time" />
+        <input type="datetime-local" id="input-return-time" value="2022-11-02T10:30" placeholder="return pick up time" />
+      </div>
+      <button id="addTripBtn">Add a new trip</button>
+    </div>
+
+    <!--   Below div will contain med list from logged in member     -->
+    <div id="responseArea">
+
+    </div>
+  </main>
+
+
+  <script src="./javaScript/transportation.js"></script>
+  <script src="./javaScript/dashboard.js"></script>
+</body>
+</html>
