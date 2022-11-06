@@ -31,8 +31,8 @@ public class Transportation {
     @JsonFormat(pattern = "HH:mm:SSSZ", shape = JsonFormat.Shape.STRING)
     private LocalTime return_pick_up_time;
 
-    @OneToOne
-    @JsonBackReference
+    @OneToOne(mappedBy = "transportation")
+//    @JsonBackReference
     private Appointment appointment;
 
 

@@ -32,24 +32,24 @@ async function deleteApptByApptId(apptId){
     return getAllApptByMemberId(memberId);
 }
 
- async function addAppt(obj){
-     const body = {
-         "appt_date_time": document.querySelector("#input-appt-date-time").value,
-         "provider_address": document.querySelector("#input-provider-address").value,
-         "provider_name":document.querySelector("#input-provider-name").value,
-     }
-     await fetch(`http://localhost:8080/api/v1/appointment/member/${memberId}`, {
-         method: "POST",
-         body: JSON.stringify(body),
-         headers: headers
-     }).then(res => res.json())
-         .then(data => {
-             // console.log(data)
-             location.assign("appointment.html")
-         })
-         .catch(err => console.error(err.message))
+async function addAppt(obj){
+    const body = {
+        "appt_date_time": document.querySelector("#input-appt-date-time").value,
+        "provider_address": document.querySelector("#input-provider-address").value,
+        "provider_name":document.querySelector("#input-provider-name").value,
+    }
+    await fetch(`http://localhost:8080/api/v1/appointment/member/${memberId}`, {
+        method: "POST",
+        body: JSON.stringify(body),
+        headers: headers
+    }).then(res => res.json())
+        .then(data => {
+            // console.log(data)
+            location.assign("appointment.html")
+        })
+        .catch(err => console.error(err.message))
 
- }
+}
 
 
 
@@ -58,7 +58,7 @@ const createCards = (array) => {
 
     array.forEach(obj => {
         const div = document.createElement('div');
-        div.classList = "w3-half";
+        div.classList = "card";
 
         div.innerHTML = `
             <p>${obj.appt_date_time}</p>
@@ -66,7 +66,7 @@ const createCards = (array) => {
             <p>${obj.provider_address}</p>
             
             <button id="delete-btn" onclick="deleteApptByApptId(${obj.appt_id})">X</button>
-            <button id="${obj.appt_id}-button">transportation</button>
+            <button id="${obj.appt_id}-button" type="button" class="btn btn-dark">transportation</button>
 
         `
         responseArea.appendChild(div)
@@ -74,7 +74,9 @@ const createCards = (array) => {
         const buttonToTrans = document.getElementById(`${obj.appt_id}-button`);
 
         buttonToTrans.addEventListener('click', () => {
-            location.assign(`api/v1/transportation/appointment/${obj.appt_id}`)
+            // location.assign(`api/v1/transportation/${obj.appt_id}`)
+            window.localStorage.setItem('apptId', `${obj.appt_id}`);
+            window.open('./transportation.html', '_blank');
         })
 
     })

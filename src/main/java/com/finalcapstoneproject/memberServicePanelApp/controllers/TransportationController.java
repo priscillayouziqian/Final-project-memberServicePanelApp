@@ -36,9 +36,9 @@ public class TransportationController {
 //    }
 //
 //    //get a transportation by appointment id
-//    @GetMapping("/{appointmentId}")
-//    public Optional<TransportationDto> getTransportationById(@PathVariable Long appointmentId){
-//        return transportationService.getTransportationById(appointmentId);
-//    }
+    @GetMapping("/{appointmentId}")
+    public Optional<TransportationDto> getTransportationById(@PathVariable Long appointmentId){
+        return transportationService.getTransportationById(appointmentId);
+    }
 
 }

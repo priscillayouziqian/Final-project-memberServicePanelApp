@@ -37,8 +37,9 @@ public class Appointment {
 
     @OneToOne(cascade = CascadeType.ALL, orphanRemoval = true)
 //    @JsonManagedReference
-//    @JoinColumn(name = "transportation_id", referencedColumnName = "id")
-    @JsonBackReference
+    @JoinColumn(name = "transportation_id", referencedColumnName = "id")
+//    @JsonBackReference
+
     private Transportation transportation;
 
     public Appointment(AppointmentDto appointmentDto){

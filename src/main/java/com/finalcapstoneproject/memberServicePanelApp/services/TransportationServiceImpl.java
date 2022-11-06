@@ -30,10 +30,10 @@ public class TransportationServiceImpl implements TransportationService {
         Optional<Appointment> appointmentOptional = appointmentRepository.findById(appointmentId);
         Transportation transportation = new Transportation(transportationDto);
         if(appointmentOptional.isPresent()){
-            transportation.setAppointment(appointmentOptional.get());
+            appointmentOptional.get().setTransportation(transportation);
         }
 //        appointmentOptional.ifPresent(transportation::setAppointment);
-        transportationRepository.saveAndFlush(transportation);
+        appointmentRepository.saveAndFlush(appointmentOptional.get());
     }
     //delete a transportation appt
     @Override

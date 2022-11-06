@@ -16,7 +16,7 @@
 <body>
     <section>
       <div class="header-left">
-        <h1>Dash Board</h1>
+        <a href="dashboard.html"><h1>Dash Board</h1></a>
       </div>
 
       <div class="header-right">
@@ -27,10 +27,10 @@
     </section>
 
     <main>
-      <div>
-        <div>
-          <input type="datetime-local" id="input-appt-date-time" value="2022-11-02T10:30" placeholder="appointment date and time" />
-          <input type="text" id="input-provider-name" placeholder="provider name" />
+      <div id="addAppointmentArea">
+        <div id="input-container" >
+          <input type="datetime-local" id="input-appt-date-time" value="2022-11-02T10:30" placeholder="appointment date and time" /><br><br>
+          <input type="text" id="input-provider-name" placeholder="provider name" /><br><br>
           <input type="text" id="input-provider-address" placeholder="provider address" />
         </div>
         <button id="addBtn">Add Appointment</button>
