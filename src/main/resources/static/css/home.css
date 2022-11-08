@@ -1,13 +1,13 @@
 * {
-	margin: 0px;
-	padding: 0px;
-	box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
 }
 
 body, html {
-	height: 100%;
+    height: 100%;
     width: 100%;
-	font-family: 'Ubuntu', sans-serif;
+    font-family: 'Ubuntu', sans-serif;
 }
 
 section{
@@ -110,15 +110,15 @@ input::placeholder {
     -o-transition: all 0.4s;
     -moz-transition: all 0.4s;
     transition: all 0.4s;
-  }
+}
 
-  .input:focus + .focus-input100 {
+.input:focus + .focus-input100 {
     width: calc(100% + 20px);
-  }
+}
 
-  /* Button */
+/* Button */
 
-  .submit-btn {
+.submit-btn {
     display: -webkit-box;
     display: -webkit-flex;
     display: -moz-box;
@@ -144,8 +144,8 @@ input::placeholder {
     transition: all 0.4s;
     border: none transparent;
     outline: none;
-  }
+}
 
-  .submit-btn:hover {
+.submit-btn:hover {
     background-color: #1b3815;
-  }
+}
