@@ -14,7 +14,7 @@ body, html {
 section{
     height: 15%;
     width: 100%;
-    background-color: #57b846;
+    background-color: #4caf50;
     padding: 2%;
 }
 
@@ -32,7 +32,6 @@ section{
     font-family: 'Ubuntu';
     color: white;
     font-size: xxx-large;
-
 }
 
 .header-left a{
@@ -57,7 +56,7 @@ section{
     align-items: center;
 }
 
-#logout-btn, #addBtn{
+#logout-btn, #addTripBtn{
     align-items: center;
     appearance: none;
     background-color: #fff;
@@ -92,14 +91,13 @@ section{
     z-index: 0;
 }
 
-
 /* main-upper side */
 main{
     height: 85%;
-    /* background-color: bisque; */
+    /*background-color: bisque;*/
 }
 
-#addMedlistArea{
+#addTransportationArea{
     height: 40%;
     /* background-color: brown; */
     display: flex;
@@ -109,16 +107,6 @@ main{
     padding-left: 30%;
     padding-right: 30%;
 }
-
-.input-container{
-    /* background-color: aliceblue; */
-    display: flex;
-    justify-content: space-around;
-    align-items:center;
-    flex-direction: column;
-}
-
-
 
 input{
     width: 100%;
@@ -130,7 +118,7 @@ input{
     outline: none;
     padding-left: 5%;
     font-size: 100px;
-    height: 60px;
+    height: 50px;
 }
 
 input::placeholder {
@@ -148,16 +136,18 @@ input::placeholder {
 }
 
 .card{
-    border: 4px dashed #57b846;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border: 4px dashed #4caf50;
+    background-color: rgba(173, 172, 172, 0.31);
     float: left;
-    width: 28%;
+    width: 43%;
     margin: 2%;
     padding-top: 2%;
     padding-bottom: 2%;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    flex-direction: column;
+    /*flex-direction: column;*/
     position: relative;
 }
 
@@ -205,37 +195,37 @@ input::placeholder {
 }
 
 /*below is copied button hover effect*/
-#logout-btn:hover, #addBtn:hover {
+#logout-btn:hover, #addTripBtn:hover {
     background: #F6F9FE;
     color: #174ea6;
 }
 
-#logout-btn:active, #addBtn:active {
+#logout-btn:active, #addTripBtn:active {
     box-shadow: 0 4px 4px 0 rgb(60 64 67 / 30%), 0 8px 12px 6px rgb(60 64 67 / 15%);
     outline: none;
 }
 
-#logout-btn:focus, #addBtn:focus {
+#logout-btn:focus, #addTripBtn:focus {
     outline: none;
     border: 2px solid #4285f4;
 }
 
-#logout-btn:not(:disabled), #addBtn:not(:disabled) {
+#logout-btn:not(:disabled), #addTripBtn:not(:disabled) {
     box-shadow: rgba(60, 64, 67, .3) 0 1px 3px 0, rgba(60, 64, 67, .15) 0 4px 8px 3px;
 }
 
-#logout-btn:not(:disabled):hover, #addBtn:not(:disabled):hover {
+#logout-btn:not(:disabled):hover, #addTripBtn:not(:disabled):hover {
     box-shadow: rgba(60, 64, 67, .3) 0 2px 3px 0, rgba(60, 64, 67, .15) 0 6px 10px 4px;
 }
 
-#logout-btn:not(:disabled):focus, #addBtn:not(:disabled):focus {
+#logout-btn:not(:disabled):focus, #addTripBtn:not(:disabled):focus {
     box-shadow: rgba(60, 64, 67, .3) 0 1px 3px 0, rgba(60, 64, 67, .15) 0 4px 8px 3px;
 }
 
-#logout-btn:not(:disabled):active, #addBtn:not(:disabled):active {
+#logout-btn:not(:disabled):active, #addTripBtn:not(:disabled):active {
     box-shadow: rgba(60, 64, 67, .3) 0 4px 4px 0, rgba(60, 64, 67, .15) 0 8px 12px 6px;
 }
 
-#logout-btn:disabled, #addBtn:disabled {
+#logout-btn:disabled, #addTripBtn:disabled {
     box-shadow: rgba(60, 64, 67, .3) 0 1px 3px 0, rgba(60, 64, 67, .15) 0 4px 8px 3px;
 }

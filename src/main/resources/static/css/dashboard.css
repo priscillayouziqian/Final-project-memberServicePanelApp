@@ -14,7 +14,7 @@ body, html {
 section{
     height: 15%;
     width: 100%;
-    background-color: #57b846;
+    background-color: #4caf50;
     display: flex;
     justify-content: space-between;
     padding: 2%;
@@ -102,12 +102,12 @@ main{
     border-radius: 15px;
     margin: 5%;
     display: flex;
-    border: 2px solid #57b846;
+    border: 2px solid #4caf50;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 
     position: relative;
     text-align: center;
-    color: #57b846;
+    color: rgba(0, 0, 0, 0.66);
 }
 
 .centered{
@@ -116,7 +116,8 @@ main{
     left: 50%;
     font-family: 'Ubuntu', sans-serif;
     transform: translate(-50%, -50%);
-    font-size: xx-large;
+    font-size: xxx-large;
+    font-weight: bolder;
 }
 a{
     width: 100%;

@@ -15,10 +15,10 @@ public class TransportationController {
     private TransportationService transportationService;
 
     //get all transportation info by appointment id
-//    @GetMapping("/appointment/{appointmentId}")
-//    public List<TransportationDto> getTransportationByAppt(@PathVariable Long appointmentId){
-//        return transportationService.getAllTransportationById(appointmentId);
-//    }
+    @GetMapping("/appointment/{appointmentId}")
+    public List<TransportationDto> getTransportationByAppt(@PathVariable Long appointmentId){
+        return transportationService.getAllTransportationById(appointmentId);
+    }
     //add a new transportation
     @PostMapping("/appointment/{appointmentId}")
     public void addTransportation(@RequestBody TransportationDto transportationDto,@PathVariable Long appointmentId){
@@ -36,9 +36,9 @@ public class TransportationController {
 //    }
 //
 //    //get a transportation by appointment id
-    @GetMapping("/{appointmentId}")
-    public Optional<TransportationDto> getTransportationById(@PathVariable Long appointmentId){
-        return transportationService.getTransportationById(appointmentId);
-    }
+//    @GetMapping("/{appointmentId}")
+//    public Optional<TransportationDto> getTransportationById(@PathVariable Long appointmentId){
+//        return transportationService.getTransportationById(appointmentId);
+//    }
 
 }

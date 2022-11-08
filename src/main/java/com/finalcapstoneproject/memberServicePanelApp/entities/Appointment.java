@@ -1,19 +1,19 @@
 package com.finalcapstoneproject.memberServicePanelApp.entities;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonFormat;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.fasterxml.jackson.annotation.*;
 import com.finalcapstoneproject.memberServicePanelApp.dtos.AppointmentDto;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "Appointment")
-@Data
+//@Data
+@Setter
+@Getter
 @AllArgsConstructor
 @NoArgsConstructor
 public class Appointment {
@@ -35,12 +35,25 @@ public class Appointment {
     @JsonBackReference
     private Member member;
 
-    @OneToOne(cascade = CascadeType.ALL, orphanRemoval = true)
-//    @JsonManagedReference
-    @JoinColumn(name = "transportation_id", referencedColumnName = "id")
+    public List<Transportation> getTransportationList() {
+        if (transportationList == null){
+            transportationList = new ArrayList<>();
+        }
+        return transportationList;
+    }
+
+    public void addTransportation(Transportation transportation){
+        this.getTransportationList().add(transportation);
+        transportation.setAppointment(this);
+    }
+    @JsonIgnore
+//    @OneToOne(mappedBy = "appointment", cascade = {CascadeType.PERSIST, CascadeType.REMOVE}, orphanRemoval = true, fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "appointment", cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REMOVE})
+    @JsonManagedReference
+//    @JoinColumn(name = "transportation_id", referencedColumnName = "id")
 //    @JsonBackReference
 
-    private Transportation transportation;
+    private List<Transportation> transportationList;
 
     public Appointment(AppointmentDto appointmentDto){
         if(appointmentDto.getProvider_name() != null){

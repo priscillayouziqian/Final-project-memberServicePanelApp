@@ -2,17 +2,19 @@ package com.finalcapstoneproject.memberServicePanelApp.entities;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.finalcapstoneproject.memberServicePanelApp.dtos.TransportationDto;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
 import java.time.LocalTime;
 
 @Entity
 @Table(name = "Transportation")
-@Data
+//@Data
+@Setter
+@Getter
 @AllArgsConstructor
 @NoArgsConstructor
 public class Transportation {
@@ -31,8 +33,12 @@ public class Transportation {
     @JsonFormat(pattern = "HH:mm:SSSZ", shape = JsonFormat.Shape.STRING)
     private LocalTime return_pick_up_time;
 
-    @OneToOne(mappedBy = "transportation")
+//    @JsonIgnore
+//    @OneToOne(cascade = CascadeType.REMOVE)
+//    @JoinColumn(name = "appointment_id", referencedColumnName = "appt_id")
 //    @JsonBackReference
+    @ManyToOne
+    @JoinColumn(name = "appointment_id", referencedColumnName = "appt_id")
     private Appointment appointment;
 
 
@@ -47,5 +53,15 @@ public class Transportation {
         if(transportationDto.getReturn_pick_up_time() != null){
             this.return_pick_up_time = transportationDto.getReturn_pick_up_time();
         }
+    }
+
+    @Override
+    public String toString() {
+        return "Transportation{" +
+                "id=" + id +
+                ", transportation_provider='" + transportation_provider + '\'' +
+                ", pick_up_time=" + pick_up_time +
+                ", return_pick_up_time=" + return_pick_up_time +
+                '}';
     }
 }

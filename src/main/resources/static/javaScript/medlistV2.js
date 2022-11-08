@@ -58,7 +58,7 @@ const createCards = (array) => {
 
         div.innerHTML = `
             <div id="${obj.id}-med-name"><p>${obj.med_name}</p></div>
-            <div id="${obj.id}-instruction"><p>${obj.instruction}</p></div>
+            <div id="${obj.id}-instruction" style="justify-content: center; display: flex; align-items: center; flex-direction: column"><p>${obj.instruction}</p></div>
             <br>
             <button id="${obj.id}-btn" type="button" class="btn btn-success">Edit</button>
 <!--            <button>Save</button>-->
@@ -84,7 +84,7 @@ const createCards = (array) => {
 
             const updateSaveBtn = document.getElementById(`${obj.id}-save`);
 
-            function handleAppointmentEdit(id){
+            function handleMedlistEdit(id){
                 let bodyObj = {
                     "id": obj.id,
                     "med_name": document.getElementById(`${obj.id}-update-name`).value,
@@ -101,7 +101,7 @@ const createCards = (array) => {
                 return getAllMedlistByMemberId(memberId);
             }
 
-            updateSaveBtn.addEventListener('click', handleAppointmentEdit);
+            updateSaveBtn.addEventListener('click', handleMedlistEdit);
         })
 
     })

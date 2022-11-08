@@ -2,14 +2,21 @@
 <html lang="en">
   <head>
       <meta charset="UTF-8">
-      <link rel="stylesheet" href="./css/transportation.css">
+      <link rel="stylesheet" href="./css/transportationV2.css">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@300&family=Kanit&family=Oleo+Script+Swash+Caps:wght@700&family=Pacifico&family=Permanent+Marker&family=Roboto:ital@1&family=Rubik+Moonrocks&family=Shadows+Into+Light&family=Source+Sans+Pro:ital,wght@1,300&family=Ubuntu&display=swap" rel="stylesheet">
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+      <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
       <title>Schedule Transportation - Member Management Panel</title>
   </head>
 <body>
 
   <section>
     <div class="header-left">
-      <h1>Dash Board</h1>
+      <a href="dashboard.html"><h1>Dash Board</h1></a>
     </div>
 
     <div class="header-right">
@@ -22,21 +29,21 @@
   <main>
     <div id="addTransportationArea">
       <div>
-        <input type="text" id="input-transportation-provider" placeholder="transportation provider name" />
-        <input type="datetime-local" id="input-pickup-time" value="2022-11-02T10:30" placeholder="pick up time" />
-        <input type="datetime-local" id="input-return-time" value="2022-11-02T10:30" placeholder="return pick up time" />
+        <input type="text" id="input-transportation-provider" placeholder="transportation provider name" /><br><br>
+        <input type="time" id="input-pickup-time" value="10:30" placeholder="pick up time" /><br><br>
+        <input type="time" id="input-return-time" value="13:30" placeholder="return pick up time" />
       </div>
       <button id="addTripBtn">Add a new trip</button>
     </div>
 
-    <!--   Below div will contain med list from logged in member     -->
+    <!--   Below div will contain scheduled trips from logged in member     -->
     <div id="responseArea">
 
     </div>
   </main>
 
 
-  <script src="./javaScript/transportation.js"></script>
+  <script src="./javaScript/transportationV2.js"></script>
   <script src="./javaScript/dashboard.js"></script>
 </body>
 </html>

@@ -16,7 +16,7 @@ public interface TransportationService {
     void deleteTransportationById(Long transportationId);
 
     //get all transportation by appt id
-//    List<TransportationDto> getAllTransportationById(Long appointmentId);
+    List<TransportationDto> getAllTransportationById(Long appointmentId);
 
     //get a single transportation appt by the transportation id
     Optional<TransportationDto> getTransportationById(Long appointmentId);
