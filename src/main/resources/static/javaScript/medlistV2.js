@@ -61,12 +61,11 @@ const createCards = (array) => {
             <div id="${obj.id}-instruction" style="justify-content: center; display: flex; align-items: center; flex-direction: column"><p>${obj.instruction}</p></div>
             <br>
             <button id="${obj.id}-btn" type="button" class="btn btn-success">Edit</button>
-<!--            <button>Save</button>-->
             <button id="delete-btn" onclick="deleteMedlistByMedlistId(${obj.id})"> X </button>
-            
         `
         responseArea.appendChild(div)
 
+        //below: user clicks Edit button to trigger put method - updating existing info and save it to database.
         const buttonToEdit = document.getElementById(`${obj.id}-btn`);
         const medNameToEdit = document.getElementById(`${obj.id}-med-name`);
         const instructionToEdit = document.getElementById(`${obj.id}-instruction`);

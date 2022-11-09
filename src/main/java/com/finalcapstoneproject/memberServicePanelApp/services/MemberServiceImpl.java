@@ -42,7 +42,7 @@ public class MemberServiceImpl implements MemberService {
                 response.add("http://localhost:8080/dashboard.html");
                 response.add(memberDto.getUsername());
                 response.add(memberDto.getPassword());
-                //line 44: add member id to the response list, the front end can use the id if needed.
+                //add member id to the response list, the front end can use the id if needed.
                 response.add(String.valueOf(memberOptional.get().getId()));
             }else{
                 response.add("username or password incorrect");

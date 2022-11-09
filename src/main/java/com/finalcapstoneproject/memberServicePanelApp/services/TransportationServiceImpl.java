@@ -37,7 +37,6 @@ public class TransportationServiceImpl implements TransportationService {
             appointment.addTransportation(transportation);
             appointmentRepository.saveAndFlush(appointment);
         }
-//        appointmentOptional.ifPresent(transportation::setAppointment);
 
     }
     //delete a transportation appt
@@ -48,7 +47,7 @@ public class TransportationServiceImpl implements TransportationService {
         Optional<Transportation> transportationOptional = transportationRepository.findById(transportationId);
 
         transportationOptional.ifPresent(transportation -> transportationRepository.delete(transportation));
-//        transportationRepository.deleteById(transportationId);
+
 
     }
     //get all transportation by appt id
