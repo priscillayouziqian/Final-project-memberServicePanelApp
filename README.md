@@ -2,7 +2,7 @@
 
 Member Management Panel is a full-stack application designed for Long Term Care members to manage their own medical related services, including medication list, medical appointment and transportation to the appointment, by registering and/or logging in to member's account. 
 
-**Link to website demo video:** http://recruiters-love-seeing-live-demos.com/
+**Link to website demo video:** https://youtu.be/LNY2prWkNdw
 
 ![image](https://user-images.githubusercontent.com/79026729/200886726-5ef0154a-0524-4ba9-b3e2-60425de6f93b.png)
 
